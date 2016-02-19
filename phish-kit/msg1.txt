@@ -1,0 +1,10 @@
+Some of you that follow java vulnerabilities may have heard about the problem that was recently reported with java's javax.sound.midi.MidiDevice.Info class. Reading metadata from a specially deformed MIDI file can allow an attacker to break out of a JVM's sandbox.
+
+What's really worrisome--and where I think this might impact Blue Coat--is that chrome and firefox both allow extensions/plugins to play MIDIs for events (e.g., to signal a successful screenshot, the end of a download, a form submission, etc)--and if client-side java is active on a website when MIDI playback occurs, java owns the playback channel. This means that a malicious extension/plugin can hijack a java-enabled web page just by playing a corrupt MIDI file. Once hijacked, they have whatever privileges their browser ran with on the local OS--plus they can inspect/co-opt web traffic using whatever session privs the webapp was providing. Even scarier, it may be possible to piggy-back on java deserialization vulnerabilities to send the malformed data to java on the server side (see our own security advisory, SA110, Java Deserialization Vulnerabilities, a couple weeks ago). So if your stack uses java/jersey/jackson on the back end, you may be exposed, too.
+
+When Google researchers at Project Zero posted about this (Feb 4), they said there was a way to block the exploit by influencing the classloader with some system properties related to audio. I just got assigned to do some research to see if we can release a quick patch for a couple GIN projects. I recommend that you google javax.sound.midi.MidiDevice.Info to see if you need to do something similar.
+
+--Steve
+new GIN Research code monkey
+
+(This message brought to you by the numbers 0 and 1.)
