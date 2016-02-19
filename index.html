@@ -1,0 +1,67 @@
+<html>
+<head>
+<style>
+body { 
+  background-color: white; 
+  background-image: url("background.png");
+  background-repeat: repeat-x;
+  padding: 0px; 
+  margin: 0px; 
+}
+</style>
+<script>
+function track(url) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function(){};
+  xhttp.open("GET", "track?url=" + url, true);
+  xhttp.send();
+  alert("You have been phished.\n"
+    + "\n"
+    + "DON'T PANIC! This is harmless. The vulnerabilities\n"
+    + "mentioned in the email do exist, but some have been\n"
+    + "fixed; combining them as we suggested is not a real\n"
+    + "thing, as far as we know. This page sends you to\n"
+    + "some of the links so you can judge for yourself...\n"
+    + "\n"
+    + "This was a simple experiment conducted by Blue Coat\n"
+    + "researchers, approved by execs up to the CTO. No harm\n"
+    + "done, and no consequences for anybody. You're anonymous;\n"
+    + "we're tracking statistics, not individual behaviors. If\n"
+    + "you'd like to learn more about the experiment or its\n"
+    + "results, feel free to contact Daniel Hardman or Chris\n"
+    + "Larsen (Draper GIN Research team).\n"
+    + "\n"
+    + "Please DO NOT warn colleagues about the phish; let them\n"
+    + "make their own mistakes. If they ask you what you saw\n"
+    + "when you went to this page, just say some of the results\n"
+    + "were interesting and they should check for themselves."
+  );
+}
+</script>
+</head>
+<body>
+<img src="search-results.png" width="761" height="1184" alt="" usemap="#imgmap201628144231" />
+<map id="imgmap201628144231" name="imgmap201628144231">
+<area shape="rect" alt="" title="" coords="16,8,102,50" href="http://www.google.com" onclick="track('google');" target="" />
+<area shape="rect" alt="" title="" coords="123,72,640,108" href="http://www.google.com" onclick="track('google');" target="" />
+<area shape="rect" alt="" title="" coords="129,13,275,42" href="" onclick="track('text');" target="" />
+<area shape="rect" alt="" title="" coords="132,171,631,193" href="https://docs.oracle.com/javase/8/docs/api/javax/sound/midi/MidiDevice.html" onclick="track('oracle');" target="" />
+<area shape="rect" alt="" title="" coords="132,194,629,210" href="https://docs.oracle.com/javase/8/docs/api/javax/sound/midi/MidiDevice.Info.html" onclick="track('oracle');" target="" />
+<area shape="rect" alt="" title="" coords="131,270,587,293" href="https://axtaxt.wordpress.com/2012/07/08/analysis-of-cve-2011-3545/" onclick="track('axtant');" target="" />
+<area shape="rect" alt="" title="" coords="130,294,592,312" href="https://axtaxt.wordpress.com/2012/07/08/analysis-of-cve-2011-3545/" onclick="track('axtant');" target="" />
+<area shape="rect" alt="" title="" coords="132,368,593,408" href="https://github.com/rapid7/metasploit-framework/tree/master/external/source/exploits/CVE-2010-0842/MixerMidiApplet" onclick="track('metasploit');" target="" />
+<area shape="rect" alt="" title="" coords="131,465,506,505" href="http://www.cvedetails.com/cve-details.php?t=1&cve_id=CVE-2011-3545" onclick="track('bugtraq');" target="" />
+<area shape="rect" alt="" title="" coords="131,561,633,604" href="http://www.cvedetails.com/cve-details.php?t=1&cve_id=CVE-2011-3545" onclick="track('bugtraq');" target="" />
+<area shape="rect" alt="" title="" coords="129,680,629,718" href="http://www.scip.ch/en/?vuldb.7100" onclick="track('scip');" target="" />
+<area shape="rect" alt="" title="" coords="130,796,526,836" href="https://www.virustotal.com/en/file/a68478ce012a2692231b1e5d0069651315dc0692b9dae4205aebb83558cb202f/analysis/" onclick="track('vt');" target="" />
+<area shape="rect" alt="" title="" coords="131,893,560,932" href="http://secniche.blogspot.com/2011/05/finest-5-java-exploit-on-fire.html" onclick="track('secniche');" target="" />
+<area shape="rect" alt="" title="" coords="231,1008,554,1076" href="https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=mididevice.info+cve&safe=strict&start=10" onclick="track('next');" target="" />
+<area shape="rect" alt="" title="" coords="127,1153,427,1176" href="http://www.google.com" onclick="track('google');" target="" />
+<area shape="rect" alt="" title="" coords="387,1120,591,1141" href="http://www.google.com" onclick="track('google');" target="" />
+<area shape="rect" alt="" title="" coords="714,9,753,51" href="http://www.google.com" onclick="track('google');" target="" />
+<a href="https://www.google.com/preferences?hl=en" onclick="track('google');">
+<img src="right-corner.png" width="206" height="104" alt="" style="position:absolute; top:0; right: 0"/>
+</a>
+</map>
+</body>
+</html>
